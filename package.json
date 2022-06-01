@@ -1,0 +1,24 @@
+{
+  "name": "branli-express-mongo",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsc",
+    "build": "ts-node-dev --respawn src/index.ts",
+    "start": "node src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^4.7.2"
+  },
+  "dependencies": {
+    "@typegoose/typegoose": "^9.8.1",
+    "dotenv": "^16.0.1",
+    "mongoose": "^6.3.5"
+  }
+}
