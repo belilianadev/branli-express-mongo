@@ -1,5 +1,5 @@
 import { CallbackError } from "mongoose";
-import { Usuario } from "../Models/Usuario";
+import { Usuario } from "../models/Usuario";
 
 interface Response {
   estado: number;
