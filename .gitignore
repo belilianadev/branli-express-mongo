@@ -6,3 +6,4 @@ node_modules
 -.eslintrc.ts
 -.prettierignore
 -.prettierrc
+src/Routes/transacciones.ts

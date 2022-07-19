@@ -1,6 +1,5 @@
 import { CallbackError } from "mongoose";
-import { Usuario } from "../models/Usuario";
-import { UsuarioVista } from "./UsuarioVista";
+import { Usuario } from "../Models/Usuario";
 
 interface Response {
   estado: number;
@@ -8,10 +7,10 @@ interface Response {
   descripcion: string | CallbackError | unknown;
 }
 
-export interface ResponseCrear extends Response {
+export interface ResponseUser extends Response {
   objeto: Usuario | null;
 }
 
-export interface ResponseUsuario extends Response {
-  objeto: UsuarioVista;
+export interface ResponseUsers extends Response {
+  objeto: Usuario[] | null;
 }

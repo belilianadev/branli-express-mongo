@@ -1,22 +1,11 @@
 import { Request, Response } from "express";
-import { ResponseCrear } from "../Interfaces/Response";
+import { ResponseUser } from "../Interfaces/Response";
 import { body, validationResult } from "express-validator";
-import { createUserLogic } from "../Services/UsuarioService";
-
-/* export const createUser = async (req: Request): Promise<ResponseCrear> => {
-  const u = new UsuarioModel();
-  const { usuario, contrasenia } = req.body;
-
-  u.usuario = usuario;
-  u.contrasenia = contrasenia;
-
-  const respuesta = await createUserLogic(u);
-  return respuesta;
-}; */
+import { createUserLogic, listUserLogic } from "../Services/UsuarioService";
 
 export const rejectOrCreate = async (req: Request, res: Response) => {
   const errors = validationResult(req);
-  let respuesta: ResponseCrear;
+  let respuesta: ResponseUser;
 
   if (!errors.isEmpty()) {
     respuesta = {
@@ -41,3 +30,9 @@ export const validationsCreate = [
     .notEmpty()
     .withMessage("No debe estár vacío"),
 ];
+
+export const listUser = async (req: Request, res: Response) => {
+  console.log("hola entre a controller listar");
+  const respuesta = await listUserLogic(req);
+  return res.status(respuesta.estado).send(respuesta);
+};

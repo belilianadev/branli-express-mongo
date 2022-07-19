@@ -2,10 +2,12 @@ import express from "express";
 import {
   validationsCreate,
   rejectOrCreate,
-} from "../controllers/UsuarioController";
+  listUser,
+} from "../Controllers/UsuarioController";
 const router = express.Router();
 
 // Assign routes
 router.post("/usuarios", validationsCreate, rejectOrCreate);
+router.get("/usuarios", listUser);
 
 export default router;
